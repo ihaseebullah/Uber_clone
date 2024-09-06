@@ -9,7 +9,7 @@ import Swiper from "react-native-swiper";
 const Onboarding = () => {
     const swiperRef = useRef<Swiper>(null);
     const [activeIndex, setActiveIndex] = useState(0);
-    const isLastScreen=activeIndex===onboarding.length-1;
+    const isLastScreen = activeIndex === onboarding.length - 1;
 
     return (
         <SafeAreaView className="flex h-full items-center justify-between bg-white">
@@ -37,22 +37,22 @@ const Onboarding = () => {
                     <View key={item.id} className="flex items-center justify-center p-5">
                         <Image source={item.image} className="w-full h-[300px]" resizeMode="contain"></Image>
                         <View className="flex flex-row items-center justify-center w-full mt-10">
-                        <Text className="text-black text-3xl font-bold mx-10 text-center">{item.title}</Text>
-                       
-                        {/* <Text>{item.description}</Text> */}
-                        {/* You can add an image component here if needed */}
+                            <Text className="text-black text-3xl font-bold mx-10 text-center">{item.title}</Text>
+
+                            {/* <Text>{item.description}</Text> */}
+                            {/* You can add an image component here if needed */}
                         </View>
                         <Text className="text-lg font-JakartaSemiBold text-center text-[#858585] mx-10 mt-3">
                             {item.description}
                         </Text>
-                        
+
                     </View>
                 ))}
             </Swiper>
             <CustomeButton
-            title={isLastScreen?"Get Started":'Next'}
-            onPress={()=>isLastScreen ? router.replace("/(auth)/sign-up"): swiperRef.current ?.scrollBy(1)}
-            classname={`w-11/12 mg-10`}
+                title={isLastScreen ? "Get Started" : 'Next'}
+                onPress={() => isLastScreen ? router.replace("/(auth)/sign-up") : swiperRef.current?.scrollBy(1)}
+                classname={`w-11/12 mg-10`}
             />
         </SafeAreaView>
     );

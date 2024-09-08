@@ -53,6 +53,7 @@ const Onboarding = () => {
                 title={isLastScreen ? "Get Started" : 'Next'}
                 onPress={() => isLastScreen ? router.replace("/(auth)/sign-up") : swiperRef.current?.scrollBy(1)}
                 classname={`w-11/12 mg-10`}
+                
             />
         </SafeAreaView>
     );

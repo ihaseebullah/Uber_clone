@@ -46,6 +46,7 @@ const SignUp = () => {
                         icon={icons.person}
                         value={form.name}
                         onChangeText={(value) => setForm({ ...form, name: value })}
+                        
                     />
                    
                     <InputField
@@ -58,6 +59,9 @@ const SignUp = () => {
                         rightIcon={showPassword ? icons.eyecross : icons.eyecross}
                         onRightIconPress={() => setShowPassword(!showPassword)}
                     />
+                    <Text style={{ fontSize: 16, color: '#666', textAlign: 'center', marginTop: 10 }}>
+                        By signing up, you agree to our Terms of Service and Privacy Policy.
+                    </Text>
                     <TouchableOpacity
                         style={{
                             backgroundColor: '#007BFF',
